@@ -1,0 +1,10 @@
+#drop_zone {
+  border: 5px solid blue;
+  width: 200px;
+  height: 100px;
+}
+
+p {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
