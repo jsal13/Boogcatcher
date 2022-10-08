@@ -26,9 +26,18 @@ function locsAndItemsParser(txt) {
     divAreas.appendChild(tag);
 
     window.locsAndItems[key].forEach(item => {
+      var checkbox1 = document.createElement("input");
+      checkbox1.setAttribute("type", "checkbox");
+      checkbox1.setAttribute("value", "1");
+      var label1 = document.createElement("label");
+      label1.setAttribute("class", "item");
+      label1.innerText = item;
+
+
       var tag1 = document.createElement("p");
-      var text1 = document.createTextNode(`${item}`);
-      tag1.appendChild(text1);
+      tag1.appendChild(checkbox1);
+      tag1.appendChild(label1);
+
       divAreas.appendChild(tag1);
     })
     console.log(key, window.locsAndItems[key]);
@@ -46,7 +55,14 @@ function dropHandler(ev) {
 
     const f = ev.dataTransfer.items[0].getAsFile();
     reader.readAsText(f);
+
+    hideDropper();
   }
+}
+
+function hideDropper() {
+  var dropZone = document.getElementById("drop-zone");
+  dropZone.style.display = "none";
 }
 
 function dragOverHandler(ev) {

@@ -1,7 +1,10 @@
-#drop_zone {
-  border: 5px solid blue;
+#drop-zone {
+  border: 2px solid black;
   width: 200px;
   height: 100px;
+  padding: 10px;
+  border-radius: 8px;
+  ;
 }
 
 p {
@@ -11,4 +14,13 @@ p {
 
 h2 {
   margin-block-end: 0;
+}
+
+/* Hides items after checked off. */
+input[type=checkbox]:checked {
+  display: none;
+}
+
+input[type=checkbox]:checked+label.item {
+  display: none;
 }
